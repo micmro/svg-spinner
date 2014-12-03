@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="100%" height="100%" version="1.1" 
+	 xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+	 viewBox="0 0 40 40"
+	 onload="SetParams()">
+
+	<g class="seq-holder">
+		<path class="seq" d="M19.995,13.466c0.937,0,1.708-0.486,1.813-1.117l0.926-10.465C22.734,0.85,21.522,0,19.997,0 c-1.522,0-2.731,0.85-2.731,1.884L18.19,12.35c0.102,0.63,0.875,1.117,1.808,1.117H19.995z"/>
+		<path class="seq" d="M23.27,14.344c-0.812-0.469-1.233-1.277-1.009-1.873l4.429-9.524c0.519-0.897,1.993-1.026,3.312-0.268 c1.316,0.765,1.941,2.107,1.424,3l-6.028,8.601c-0.409,0.492-1.32,0.528-2.13,0.06L23.27,14.344z"/>
+		<path class="seq" d="M25.656,16.73c0.469,0.81,1.277,1.235,1.873,1.014l9.524-4.435c0.897-0.517,1.026-1.99,0.268-3.307 c-0.765-1.32-2.107-1.943-3-1.425l-8.601,6.033c-0.492,0.404-0.528,1.317-0.06,2.127L25.656,16.73z"/>
+		<path class="seq" d="M26.538,20.005c0-0.937,0.484-1.708,1.114-1.813l10.464-0.926c1.037,0,1.884,1.212,1.884,2.737 c0,1.522-0.848,2.731-1.884,2.731L27.651,21.81c-0.629-0.102-1.114-0.875-1.114-1.808C26.538,20.002,26.538,20.005,26.538,20.005z" />
+		<path class="seq" d="M25.656,23.27c0.469-0.812,1.277-1.233,1.873-1.009l9.524,4.429c0.897,0.519,1.026,1.993,0.268,3.312 c-0.765,1.316-2.107,1.941-3,1.424l-8.601-6.028c-0.492-0.409-0.528-1.32-0.06-2.13L25.656,23.27z"/>
+		<path class="seq" d="M23.268,25.66c0.809-0.47,1.721-0.433,2.13,0.061l6.028,8.601c0.516,0.894-0.109,2.236-1.424,2.996 c-1.319,0.764-2.793,0.628-3.312-0.266l-4.429-9.523c-0.224-0.596,0.197-1.406,1.009-1.875L23.268,25.66z"/>
+		<path class="seq" d="M19.995,26.538c0.937,0,1.708,0.484,1.813,1.114l0.926,10.464c0,1.037-1.212,1.884-2.737,1.884 c-1.522,0-2.731-0.848-2.731-1.884l0.924-10.464c0.102-0.629,0.875-1.114,1.808-1.114C19.998,26.538,19.995,26.538,19.995,26.538z" />
+		<path class="seq" d="M16.735,25.66c-0.81-0.47-1.723-0.433-2.127,0.061l-6.033,8.601c-0.518,0.894,0.105,2.236,1.425,2.996 c1.318,0.764,2.791,0.628,3.307-0.266l4.435-9.523c0.222-0.596-0.203-1.406-1.014-1.874L16.735,25.66z"/>
+		<path class="seq" d="M14.34,23.268c0.47,0.809,0.433,1.721-0.061,2.13l-8.601,6.028c-0.894,0.516-2.236-0.109-2.996-1.424 c-0.764-1.319-0.628-2.793,0.266-3.312l9.523-4.429c0.596-0.224,1.406,0.197,1.875,1.009L14.34,23.268z"/>
+		<path class="seq" d="M13.466,20.005c0-0.937-0.486-1.708-1.117-1.813L1.884,17.266C0.85,17.266,0,18.478,0,20.003 c0,1.522,0.85,2.731,1.884,2.731L12.35,21.81c0.63-0.102,1.117-0.875,1.117-1.808V20.005z"/>
+		<path class="seq" d="M14.34,16.735c0.47-0.81,0.433-1.723-0.061-2.127L5.677,8.575c-0.894-0.518-2.236,0.105-2.996,1.425 c-0.764,1.318-0.628,2.791,0.266,3.307l9.523,4.435c0.596,0.222,1.406-0.203,1.874-1.014L14.34,16.735z"/>
+		<path class="seq" d="M16.73,14.344c0.81-0.469,1.235-1.277,1.014-1.873l-4.435-9.524c-0.517-0.897-1.99-1.026-3.307-0.268 c-1.32,0.765-1.943,2.107-1.425,3l6.033,8.601c0.404,0.492,1.317,0.528,2.127,0.06L16.73,14.344z"/>
+	</g>
+
+	<script> 
+	<![CDATA[
+		"use strict";
+
+		var s = document.documentElement.style,
+			seqs = document.getElementsByClassName("seq"),
+			seqsLength = seqs.length,
+			supportsTransitions = "transition" in s || "WebkitTransition" in s || "MozTransition" in s || "msTransition" in s || "OTransition" in s;
+
+		function FindQueryParams(queryBase){
+			var match,
+				search = /([^&=]+)=?([^&]*)/g,
+				decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); },
+				query  = queryBase.substring(1),
+				urlParams = {};
+
+			while (match = search.exec(query)){
+				urlParams[decode(match[1])] = decode(match[2]);
+			}
+			return urlParams;
+		}
+		/*only for browsers without animation support*/
+		function animateViaJs() {
+			var activeSeq = 0;
+			function getAlpha(s, length){
+				if(s === activeSeq){
+					return 1;
+				}else if((activeSeq>0 && s===activeSeq-1) || (activeSeq==0 && s===seqsLength-1)){
+					return 0.8;
+				}else if((activeSeq>1 && s===activeSeq-2) || (activeSeq==0 && s===seqsLength-2) || (activeSeq==1 && s===seqsLength-1)){
+					return 0.6;
+				}else{
+					return 0.4;
+				}
+			} 
+			function animationTick(){
+				for (var i = 0; seqsLength > i; i++) {
+					seqs[i].style.opacity = getAlpha(i);
+				}
+				activeSeq = (activeSeq < seqsLength-1 ? activeSeq + 1 : 0);
+			}
+			var timer = setInterval(animationTick, 120); 
+		}
+		function SetParams() {
+			var paramArray = [];
+			var params;
+
+			if(document.defaultView.frameElement) {
+				params = document.defaultView.frameElement.getElementsByTagName("param");
+				for (var i = 0, iLen = params.length; iLen > i; i++) {
+					paramArray[params[i].name] = params[i].value;
+				}
+			}
+			if(paramArray.length === 0 && document.location.hash || document.location.search){
+				paramArray = FindQueryParams(document.location.hash || document.location.search);
+			}
+			if(paramArray.color){				
+				for (var i = 0; seqsLength > i; i++) {
+					seqs[i].style.fill = paramArray.color;
+				}
+			}
+			if(!supportsTransitions){
+				animateViaJs();
+			}
+		}
+	]]>
+	</script>
+
+	<style>
+	<![CDATA[
+		.seq-holder { fill: #5f7279; }
+
+		path {
+			opacity: 1;
+			-webkit-animation-delay: 0s;
+			animation-delay: 0s;
+
+			-webkit-animation: fadeit 1.92s linear infinite;
+			animation: fadeit 1.92s linear infinite;
+		}
+		path:nth-child(1) {
+			-webkit-animation-delay: 0.16s;
+			animation-delay: 0.16s;
+		}
+		path:nth-child(2) {
+			-webkit-animation-delay: 0.32s;
+			animation-delay: 0.32s;
+		}
+		path:nth-child(3) {			
+			-webkit-animation-delay: 0.48s;
+			animation-delay: 0.48s;
+		}
+		path:nth-child(4) {
+			-webkit-animation-delay: 0.64s;
+			animation-delay: 0.64s;
+		}
+		path:nth-child(5) {
+			-webkit-animation-delay: 0.80s;
+			animation-delay: 0.80s;
+		}
+		path:nth-child(6) {
+			-webkit-animation-delay: 0.96s;
+			animation-delay: 0.96s;
+		}
+		path:nth-child(7) {
+			-webkit-animation-delay: 1.12s;
+			animation-delay: 1.12s;
+		}
+		path:nth-child(8) {
+			-webkit-animation-delay: 1.28s;
+			animation-delay: 1.28s;
+		}
+		path:nth-child(9) {
+			-webkit-animation-delay: 1.44s;
+			animation-delay: 1.44s;
+		}
+		path:nth-child(10) {
+			-webkit-animation-delay: 1.60s;
+			animation-delay: 1.60s;
+		}
+		path:nth-child(11) {
+			-webkit-animation-delay: 1.76s;
+			animation-delay: 1.76s;
+		}
+		path:nth-child(12) {
+			-webkit-animation-delay: 1.92s;
+			animation-delay: 1.92s;
+		}
+		/*animation*/
+		
+		@-webkit-keyframes fadeit {
+			0% { opacity: 1; }
+			100% { opacity: 0.1; }
+		}
+		@keyframes fadeit{
+			0%{ opacity:1; }
+			100%{ opacity:0.1;}
+		}
+	]]>
+	</style>
+</svg>

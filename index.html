@@ -1,0 +1,29 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+	<title>Themeable, cachable SVG loading spinner</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+	<link href="/assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<section class="loader">
+	<div>	
+		<h3>SVG Loading Spinner</h3>
+		<div class="load-spinner" role="progressbar" aria-valuenow="loading data">
+			<object type="image/svg+xml" data="/assets/loader.svg#color=%23f00">
+				<img src="/assets/fallback.gif" alt="loading" />
+			</object>
+		</div>
+	</div>
+
+	<style>
+		body {font-family: sans-serif;}
+		.load-spinner object,
+		.load-spinner img {width: 50px; height:50px;}
+	</style>
+</section>
+</body>
+</html>

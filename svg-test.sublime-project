@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": ".",
+			"file_exclude_patterns": [
+				".gitignore"
+				,"*.sublime-workspace"
+				,"*.sublime-project"
+				,"package.json"
+				,"Gruntfile.js"
+				,"LICENSE"
+			],
+			"folder_exclude_patterns": [
+				"node_modules",
+				"temp"
+			]
+		}
+	]
+}

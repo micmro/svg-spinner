@@ -1,0 +1,16 @@
+{
+  "name": "grunt-simple-boilerplate",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "connect-livereload": "~0.3.2",
+    "grunt": "~0.4.4",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-open": "^0.2.3",
+    "matchdep": "~0.1.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
