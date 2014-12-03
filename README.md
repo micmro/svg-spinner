@@ -15,7 +15,9 @@ Tested in: IE8\*\*, IE9\*, IE10, IE11, FF 33, Chrome 38, Opera 26, Safari 6.1, S
 
 
 Fallbacks:
+
 \* Spinner falls back to JS animation as fallback for [browser that don't support CSS animation](http://caniuse.com/#feat=css-animation)
+
 \*\* Spinner falls back to gif in IE8 and other [browsers that don't support SVG](http://caniuse.com/#feat=svg) and/or the object tag
 
 Changing the colour
