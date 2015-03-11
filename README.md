@@ -19,12 +19,3 @@ Tested in: IE8\*\*, IE9\*, IE10, IE11, FF 33, Chrome 38, Opera 26, Safari 6.1, S
 Changing the colour
 -------------------
 Change the `data-colour="#fdbc33"` tag and update `data-fallback-class="no-svg-fallback-orange"` to switch the IE8 fallback.
-
-Server / IE Quirks
-------------------
-Using the `object` tag, even when the type is defined, IE is first issuing a [`HEAD`](https://ochronus.com/http-head-request-good-uses/) request to determin the content-type.
-
-This is unneccessary and bad for performance but the biggest problem is that some server, like nginx, will, depending on the configuration, ignore these requests and return a 400 error instead.
-
-[This Sitepoint article](http://www.sitepoint.com/ie-contype-request/) describes a sollution for PHP that should be easyly portable for other servers:
-just return an empty response with a `Content-Type: image/svg+xml` header.
