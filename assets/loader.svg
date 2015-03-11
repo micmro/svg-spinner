@@ -4,8 +4,7 @@
 <svg width="100%" height="100%" version="1.1" 
 	 xmlns="http://www.w3.org/2000/svg"
 	 xmlns:xlink="http://www.w3.org/1999/xlink"
-	 viewBox="0 0 40 40"
-	 onload="SetParams()">
+	 viewBox="0 0 40 40">
 
 	<g class="seq-holder">
 		<path class="seq" d="M19.995,13.466c0.937,0,1.708-0.486,1.813-1.117l0.926-10.465C22.734,0.85,21.522,0,19.997,0 c-1.522,0-2.731,0.85-2.731,1.884L18.19,12.35c0.102,0.63,0.875,1.117,1.808,1.117H19.995z"/>
@@ -22,77 +21,8 @@
 		<path class="seq" d="M16.73,14.344c0.81-0.469,1.235-1.277,1.014-1.873l-4.435-9.524c-0.517-0.897-1.99-1.026-3.307-0.268 c-1.32,0.765-1.943,2.107-1.425,3l6.033,8.601c0.404,0.492,1.317,0.528,2.127,0.06L16.73,14.344z"/>
 	</g>
 
-	<script> 
-	<![CDATA[
-		"use strict";
-
-		var s = document.documentElement.style,
-			seqs = document.getElementsByClassName("seq"),
-			seqsLength = seqs.length,
-			supportsTransitions = "transition" in s || "WebkitTransition" in s || "MozTransition" in s || "msTransition" in s || "OTransition" in s;
-
-		function FindQueryParams(queryBase){
-			var match,
-				search = /([^&=]+)=?([^&]*)/g,
-				decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); },
-				query  = queryBase.substring(1),
-				urlParams = {};
-
-			while (match = search.exec(query)){
-				urlParams[decode(match[1])] = decode(match[2]);
-			}
-			return urlParams;
-		}
-		/*only for browsers without animation support*/
-		function animateViaJs() {
-			var activeSeq = 0;
-			function getAlpha(s, length){
-				if(s === activeSeq){
-					return 1;
-				}else if((activeSeq>0 && s===activeSeq-1) || (activeSeq==0 && s===seqsLength-1)){
-					return 0.8;
-				}else if((activeSeq>1 && s===activeSeq-2) || (activeSeq==0 && s===seqsLength-2) || (activeSeq==1 && s===seqsLength-1)){
-					return 0.6;
-				}else{
-					return 0.4;
-				}
-			} 
-			function animationTick(){
-				for (var i = 0; seqsLength > i; i++) {
-					seqs[i].style.opacity = getAlpha(i);
-				}
-				activeSeq = (activeSeq < seqsLength-1 ? activeSeq + 1 : 0);
-			}
-			var timer = setInterval(animationTick, 120); 
-		}
-		function SetParams() {
-			var paramArray = [];
-			var params;
-
-			if(document.defaultView.frameElement) {
-				params = document.defaultView.frameElement.getElementsByTagName("param");
-				for (var i = 0, iLen = params.length; iLen > i; i++) {
-					paramArray[params[i].name] = params[i].value;
-				}
-			}
-			if(paramArray.length === 0 && document.location.hash || document.location.search){
-				paramArray = FindQueryParams(document.location.hash || document.location.search);
-			}
-			if(paramArray.color){				
-				for (var i = 0; seqsLength > i; i++) {
-					seqs[i].style.fill = paramArray.color;
-				}
-			}
-			if(!supportsTransitions){
-				animateViaJs();
-			}
-		}
-	]]>
-	</script>
-
 	<style>
 	<![CDATA[
-		.seq-holder { fill: #5f7279; }
 
 		path {
 			opacity: 1;
