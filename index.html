@@ -31,18 +31,21 @@
 	<script>
 	(function(){
 		"use strict";
+		//You would propably want to have this in a seperate file for cachability
 
 		//Feature detections
+		
+		var supportsSvg = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1");
 
 		var supportsLocalStorage = (function(){
 			try {
-	            localStorage.setItem(mod, mod);
-	            localStorage.removeItem(mod);
-	            return true;
-	        } catch(e) {
-	            return false;
-	        }
-        })();
+		            localStorage.setItem(mod, mod);
+		            localStorage.removeItem(mod);
+		            return true;
+		        } catch(e) {
+		            return false;
+		        }
+		})();
 
 		var supportsCss3Transitions = (function(){
 			var b = document.body || document.documentElement,
@@ -65,8 +68,6 @@
 
 			return false;
 		})();
-
-		var supportsSvg = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1");
 
 
 		//Constructor for Spinner
@@ -128,7 +129,7 @@
 					});
 				};
 
-				//load SVG from localStorage
+				//attempt to load SVG from localStorage
 				if(supportsLocalStorage && localStorage[storageKey]){
 					initAllElements(localStorage[storageKey]);
 				}else{
@@ -142,6 +143,7 @@
 					});
 				}
 			}else{
+				//fallback for IE8
 				$(".load-spinner").each(function(i, el){
 					var fallback = $(el).data("fallback-class");
 					if(fallback){
